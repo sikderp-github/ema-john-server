@@ -29,7 +29,7 @@ client.connect(err => {
             })
     })
 
-    // send order data to backend server from client site
+    // send order data to bac kend server from client site
     app.post('/addOrder', (req, res) => {
         const order = req.body;
         ordersCollection.insertOne(order)
@@ -70,4 +70,4 @@ app.get('/', (req, res) => {
     res.send('Hello World! Database is connected.');
 })
 
-app.listen(4000)
+app.listen(process.env.PORT || 4000)
